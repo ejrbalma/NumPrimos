@@ -27,15 +27,29 @@ public class NumerosPrimos {
         public Iterator<Integer> iterator() {
             return new Iterator<Integer>() {
 
+                private int index = 1;
+                List <Integer> listPrimes  = new ArrayList <> ();
+                
+                
                 @Override
                 public boolean hasNext() {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    return index < max;
                 }
 
                 @Override
                 public Integer next() {
-                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    while   (!isPrime (++index));
+                    return index;
                 }
+                
+                private boolean isPrime (int num){
+                    for (Integer prime : listPrimes) {
+                        if (num % prime == 0) return false;
+                    }
+                    listPrimes.add(num);
+                    return true;
+                }
+                
             };
         }
         
