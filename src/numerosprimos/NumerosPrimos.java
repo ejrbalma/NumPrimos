@@ -2,36 +2,42 @@
 package numerosprimos;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class NumerosPrimos {
 
     public static void main(String[] args) {
+        
+    }
 
-        int max = 100;
-         List <Integer> listPrimos =new ArrayList <>();
-        listPrimos.add(2);
-        
-        for (int i = 3; i < max; i++) {
-            isPrime(i, listPrimos);
-        }
-        
-        listPrimos.add(0,1);
-        
-        for (Integer primo : listPrimos) {
-            System.out.println(primo);
-        }
-        
-        
-        System.out.println("Nº de primos generados = " + listPrimos.size());
-    }
+        private static class Primes implements Iterable<Integer> {
     
-    private static void isPrime (int n, List<Integer> listPrimos){
-        
-        for (int prime : listPrimos) {
-            if (n % prime == 0) return;
+            private int max;
+
+        public Primes(int max) {
+            this.max = max;
         }
-        listPrimos.add(n);
-    }
             
+        public static Primes to (int max){
+            return new Primes (max);
+        } 
+
+        @Override
+        public Iterator<Integer> iterator() {
+            return new Iterator<Integer>() {
+
+                @Override
+                public boolean hasNext() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+
+                @Override
+                public Integer next() {
+                    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                }
+            };
+        }
+        
+        }
 }
