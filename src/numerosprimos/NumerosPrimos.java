@@ -8,8 +8,13 @@ import java.util.List;
 public class NumerosPrimos {
 
     public static void main(String[] args) {
-        
+    
+        for (int prime : Primes.to(10)) {
+            System.out.println(prime);
+        }
+    
     }
+    
 
         private static class Primes implements Iterable<Integer> {
     
